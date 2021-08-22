@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<main>
+    {% if person is not none %}
+        <h1>Information about that person:</h1>
+        <h2>ID Number:</h2>
+        {{ person.id_number }}
+        <h2>First name:</h2>
+        {{ person.firstname }}
+        <h2>Last name:</h2>
+        {{ person.lastname }}
+    {% else %}
+        <p>There is no matching person!</p>
+    {% endif %}
+</main>
+
+{% endblock %}
