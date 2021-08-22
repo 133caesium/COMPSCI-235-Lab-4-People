@@ -35,6 +35,6 @@ def find_person():
     pass
 
 
-class SearchForm:
-    person_id = IntegerField("Person id",DataRequired)
+class SearchForm(FlaskForm):
+    person_id = IntegerField("Person id", [DataRequired()])
     submit = SubmitField("Find")
