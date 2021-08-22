@@ -23,18 +23,30 @@ def home():
 def list_people():
     return render_template(
         'list_people.html',
-        people = repo.repo_instance,
+        people=repo.repo_instance,
         find_person_url=url_for('people_bp.find_person'),
         list_people_url=url_for('people_bp.list_people')
     )
-    pass
 
 
 @people_blueprint.route('/find', methods=['GET', 'POST'])
 def find_person():
-    pass
+    form = SearchForm()
+    if form.validate_on_submit():
+        return render_template(
+            'list_person.html',
+            person = next((person for person in repo.repo_instance if person.id_number == form.person_id.data), None)
+        )
+    else:
+        return render_template(
+            'find_person.html',
+            form=form,
+            find_person_url=url_for('people_bp.find_person'),
+            list_people_url=url_for('people_bp.list_people'),
+            handler_url = url_for('people_bp.find_person')
+        )
 
 
-class SearchForm:
-    person_id = IntegerField("Person id",DataRequired)
+class SearchForm(FlaskForm):
+    person_id = IntegerField("Person id", [DataRequired()])
     submit = SubmitField("Find")
