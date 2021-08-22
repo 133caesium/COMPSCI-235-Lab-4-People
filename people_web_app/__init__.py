@@ -18,4 +18,8 @@ def create_app():
         Person(92213, 'Nelson', 'Mandela')
     )
 
+    with app.app_context():
+        from .people_blueprint import people
+        app.register_blueprint(people.people_blueprint)
+
     return app
