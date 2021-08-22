@@ -1,8 +1,10 @@
-# hello_jinja Web Application
+# COMPSCI-235-Lab-4-People
 
 ## Description
 
-A minimal Web application that makes use of Flask configuration, Jinja templating, WTForms and blueprints. 
+This is the repository for Lab 4 (Week 6) of COMPSCI 235 at the University of Auckland.
+
+<a href="https://canvas.auckland.ac.nz/courses/60516/pages/lab-4-week-6-config-templates-blueprints-wtforms?module_item_id=1258645">Further description and instructions for the lab can be found on the canvas page.</a>
 
 ## Installation
 
