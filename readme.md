@@ -8,12 +8,12 @@ This is the repository for Lab 4 (Week 6) of COMPSCI 235 at the University of Au
 
 ## Installation
 
-**Installation via requirements.txt**
+**Installation via requirements.txt (For macOS)**
 
 ```shell
 $ cd COMPSCI-235
-$ py -3 -m venv venv
-$ venv\Scripts\activate
+$ python3 -m venv venv
+$ . venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
